@@ -1,3 +1,4 @@
+/*
 let count = 0; //숫자
 count +=1;
 //error: count = 'hello world';
@@ -62,20 +63,19 @@ const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)]; //Shape 타입의
 shapes.forEach(shape => {
     console.log(shape.getArea());
 });
-
+*/
 
 //interface
+/* 
 interface Person {
     name: string;
     age?: number; //?: 값 설정을 해도 되고 안해도 됨
 }
-/*
-interface Develooper {
-    name: string;
-    age?: number;
-    skills: string[];
-}
-*/
+//interface Develooper {
+//    name: string;
+//    age?: number;
+//    skills: string[];
+//}
 interface Developer extends Person {
     skills: string[];
 }
@@ -90,7 +90,7 @@ const expert: Developer = {
 };
 
 const people: Person[] = [person,expert];
-
+*/
 
 //type alias
 type Person = {
