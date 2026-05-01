@@ -20,6 +20,7 @@ export const bodyToUser = (body: UserSignUpRequest) => {
     return {
         email: body.email, //필수 
         name: body.name, // 필수
+        password: body.password, // 필수
         gender: body.gender, // 필수
         birth, // 필수
         address: body.address || "", //선택 
@@ -33,6 +34,7 @@ export const responseFromUser = ({user, preferences}: {user: any, preferences: a
     return {
         email: user.email, //필수 
         name: user.name, // 필수
+        password: user.password, // 필수
         gender: user.gender, // 필수
         birth, // 필수
         address: user.address || "", //선택 

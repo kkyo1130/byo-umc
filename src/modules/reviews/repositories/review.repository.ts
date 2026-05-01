@@ -20,7 +20,7 @@ export const addReview = async (data: any): Promise<any> => {
     const conn = await pool.getConnection();
     try {
         const [result] = await pool.query<ResultSetHeader>(
-            `INSERT INTO review (content, start, storeId, userId) VALUES (?,?,?,?);`,
+            `INSERT INTO review (content, star, storeId, userId) VALUES (?,?,?,?);`,
             [
                 data.content,
                 data.star,

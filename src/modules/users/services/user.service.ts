@@ -10,17 +10,23 @@ import bcrypt from "bcrypt";
 
 
 export const userSignUp = async (data: UserSignUpRequest) => {
+  console.log("전달 데이터:", data);
+  if (!data || !data.password) {
+    console.error("비밀번호가 데이터에 포함되어 있지 않습니다!");
+    throw new Error("비밀번호가 누락되었습니다.");
+  }
+
   const hashing = await bcrypt.hash(data.password, 10); //bcrypt.hash('해싱할 문자', 숫자) 
 
   const joinUserId = await addUser({
     email: data.email,
     name: data.name,
+    password: hashing,
     gender: data.gender,
     birth: new Date(data.birth), // 문자열을 Date 객체로 변환해서 넘겨줍니다. 
     address: data.address,
     detailAddress: data.detailAddress,
     phoneNumber: data.phoneNumber,
-    password: hashing,
   });
 
   if (joinUserId === null) {

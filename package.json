@@ -1,13 +1,12 @@
 {
   "name": "byo-umc",
-  "type": "commonjs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec tsx src/index.ts",
-    "start": "node src/index.js"
+    "start": "node --import tsx src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,7 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "@types/bcrypt": "^6.0.0"
+    "@types/bcrypt": "^6.0.0",
+    "tsx": "^4.21.0"
   }
 }

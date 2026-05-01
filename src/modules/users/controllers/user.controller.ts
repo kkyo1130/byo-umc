@@ -3,6 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import { UserSignUpRequest, bodyToUser } from "../dtos/user.dto";
 import { userSignUp } from "../services/user.service";
 
+
 export const handleUserSignUp = async (req: Request, res: Response, next: NextFunction) => {
     console.log("회원가입을 요청했습니다!");
     console.log("body:", req.body);
